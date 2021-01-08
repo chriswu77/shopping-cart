@@ -1,0 +1,103 @@
+html, body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #FFFFFF;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+html, body, #root, .App {
+    height: 100%;
+}
+
+.App {
+    position: relative;
+}
+
+nav {
+    position: fixed;
+    height: 91px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
+    z-index: 9999;
+    width: 100%;
+}
+
+.nav-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+.nav-wrapper .logo {
+    width: 106px;
+    height: 50px;
+}
+
+.nav-wrapper .shop-btn {
+    background-color: transparent;
+    border: none;
+    padding: 27px 0;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.nav-wrapper .shop-btn:focus {
+    outline: none;
+}
+
+.nav-wrapper .bag-btn {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  padding: 27px 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-wrapper .bag-btn:focus {
+    outline: none;
+}
+
+.nav-wrapper .bag-btn img {
+    height: 22px;
+    width: 22px;
+}
+
+.nav-wrapper .bag-btn .cart-count {
+    position: absolute;
+    top: 8px;
+    right: -18px;
+    top: 18px;
+    height: 18px;
+    width: 18px;
+    line-height: 18px;
+    border-radius: 50%;
+    background-color: #47af19;
+    color: #2d2d2d;
+    text-align: center;
+    font-size: 14px;
+}
+
+.container {
+  position: absolute;
+  top: 91px;
+  left: 0;
+  bottom: 0;
+  height: calc(100% - 91px);
+  width: 100%;
+  background: url('./imgs/landing_page.png') no-repeat;
+  /* background-size: 100% 100%; */
+ background-position: 50% 50%;
+  background-color: #000000;
+}
