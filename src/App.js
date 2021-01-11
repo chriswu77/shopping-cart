@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
+import Shop from './components/Shop';
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -14,7 +15,8 @@ const App = () => {
       <BrowserRouter>
         <NavBar />
         <Switch>
-          <Route path="/" component={Home} />
+          <Route exact path="/" component={Home} />
+          <Route path="/shop" component={Shop} />
         </Switch>
       </BrowserRouter>
     </div>
