@@ -211,7 +211,9 @@ outline: none;
 }
 
 .shop-container {
-  padding: 0 60px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 
 .shop-container, .category-container, .shop-card, .shop-card-click {
@@ -241,4 +243,68 @@ outline: none;
 
 .shop-card {
     width: 32%;
+}
+
+.shop-card-click {
+    cursor: pointer;
+}
+
+.shop-item-name {
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+.img-container {
+    width: 100%;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.shop-img {
+    width: 100%;
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+}
+
+.img-container:hover .img-overlay {
+    opacity: 1;
+}
+
+.bottle-text {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+@media (min-width: 768px) {
+    .shop-container {
+        width: 760px;
+    }
+}
+
+@media (min-width: 992px) {
+    .shop-container {
+        width: 980px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .shop-container {
+        width: 1180px;
+    }
+}
+
+@media (min-width: 1800px) {
+    .shop-container {
+        width: 1790px;
+    }
 }
