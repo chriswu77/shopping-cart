@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
-const ShopCard = ({ pic, hover, name }) => {
+const ShopCard = ({ pic, hover, name, id, price }) => {
   let imgEl = useRef(null);
 
   const [dimensions, setDimensions] = useState({
@@ -31,24 +32,27 @@ const ShopCard = ({ pic, hover, name }) => {
 
   return (
     <div className="shop-card">
-      <div className="shop-card-click">
-        <div className="img-container">
-          <img
-            ref={(el) => {
-              imgEl = el;
-            }}
-            src={pic}
-            alt={name}
-            style={{ height: imgHeight }}
-            className="shop-img"
-          />
-          <div className="img-overlay">
-            <img src={hover} alt={name} style={{ height: imgHeight }} />
+      <Link to={`/shop/${id}`}>
+        <div className="shop-card-click">
+          <div className="img-container">
+            <img
+              ref={(el) => {
+                imgEl = el;
+              }}
+              src={pic}
+              alt={name}
+              style={{ height: imgHeight }}
+              className="shop-img"
+            />
+            <div className="img-overlay">
+              <img src={hover} alt={name} style={{ height: imgHeight }} />
+            </div>
           </div>
+          <div className="shop-item-name">{name}</div>
         </div>
-        <div className="shop-item-name">{name}</div>
-      </div>
+      </Link>
       <div className="bottle-text">12 bottles</div>
+      <div className="shop-item-price">{`$${price}.00`}</div>
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Shop from './components/Shop';
+import Item from './components/Item';
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -16,7 +17,10 @@ const App = () => {
         <NavBar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/shop" component={Shop} />
+          <Route exact path="/shop" component={Shop} />
+          <Route path="/shop/:id">
+            <Item />
+          </Route>
         </Switch>
       </BrowserRouter>
     </div>

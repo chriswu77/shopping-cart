@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../imgs/logo.png';
 import shoppingBag from '../imgs/shopping_bag.svg';
 
@@ -14,10 +15,14 @@ const NavBar = ({ totalCount }) => {
   return (
     <nav>
       <div className="nav-wrapper">
-        <img className="logo" src={logo} alt="logo" />
-        <button className="shop-btn" type="button">
-          SHOP
-        </button>
+        <Link to="/">
+          <img className="logo" src={logo} alt="logo" />
+        </Link>
+        <Link to="/shop">
+          <button className="shop-btn" type="button">
+            SHOP
+          </button>
+        </Link>
         <button className="bag-btn" type="button">
           <img src={shoppingBag} alt="shopping bag" />
           {countDiv}

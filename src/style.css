@@ -10,7 +10,6 @@ html {
 body {
     margin: 0;
     min-height: 100%;
-    overflow: hidden;
 }
 
 html, body, #root, .App {
@@ -27,6 +26,7 @@ nav {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
     z-index: 9999;
     width: 100%;
+    background-color: #FFFFFF;
 }
 
 .nav-wrapper {
@@ -35,7 +35,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px;
+    padding: 0 50px;
     box-sizing: border-box;
 }
 
@@ -102,12 +102,10 @@ nav {
     height: 100%;
     width: 100%;
     background: url('./imgs/landing_page.png') no-repeat;
-    /* background-size: 100% 100%; */
     background-position: 50% 50%;
     background-color: #000000;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
 }
 
 .container .home-container .home-content {
@@ -115,8 +113,6 @@ nav {
     flex-direction: column;
     width: fit-content;
     transform: translateX(10%);
-    /* justify-content: center;
-    align-items: center; */
 }
 
 .home-text {
@@ -150,7 +146,7 @@ nav {
 }
 
 .shop-now-btn:focus {
-outline: none;
+    outline: none;
 }
 
 .shop-now-span {
@@ -210,10 +206,14 @@ outline: none;
     transition-delay: 0.2s;
 }
 
-.shop-container {
+.shop-container, .item-container {
     box-sizing: border-box;
     margin: 0 auto;
     padding: 0 10px;
+}
+
+.category-container {
+    margin: 40px 0;
 }
 
 .shop-container, .category-container, .shop-card, .shop-card-click {
@@ -224,7 +224,6 @@ outline: none;
 .shop-heading {
     font-size: 50px;
     margin: 0;
-    margin-top: 40px;
     font-weight: 600;
 }
 
@@ -233,6 +232,7 @@ outline: none;
   margin-top: 1rem;
   font-weight: 300;
   margin-bottom: 40px;
+  line-height: 2.25rem;
 }
 
 .shop-cards {
@@ -252,6 +252,11 @@ outline: none;
 .shop-item-name {
     font-size: 1.75rem;
     font-weight: 500;
+    color: #2d2d2d;
+}
+
+a {
+    text-decoration: none;
 }
 
 .img-container {
@@ -285,26 +290,41 @@ outline: none;
     font-weight: 300;
 }
 
+.shop-item-price {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.item-container {
+    display: flex;
+    margin-top: 30px;
+}
+
+.item-container .item-pic {
+    width: 56%;
+}
+
 @media (min-width: 768px) {
-    .shop-container {
+    .shop-container, .item-container {
         width: 760px;
     }
 }
 
 @media (min-width: 992px) {
-    .shop-container {
+    .shop-container, .item-container {
         width: 980px;
     }
 }
 
 @media (min-width: 1200px) {
-    .shop-container {
+    .shop-container, .item-container {
         width: 1180px;
     }
 }
 
 @media (min-width: 1800px) {
-    .shop-container {
+    .shop-container, .item-container {
         width: 1790px;
     }
 }
