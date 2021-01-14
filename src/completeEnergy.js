@@ -12,11 +12,11 @@ const completeEnergy = {
   shopPic: energyShop,
   hoverPic: energyHover,
   itemPic: energyItem,
-  circle1: ['Energy & Focus Boosters', '5'],
-  circle2: ['Plant-Based Protein', '15g'],
-  circle3: ['Essential Nutrients', '39'],
-  circle4: ['Omega-3', '450mg'],
-  circle5: ['Total Sugars', '3g'],
+  circle1: { type: 'Energy & Focus Boosters', units: '5' },
+  circle2: { type: 'Plant-Based Protein', units: '15g' },
+  circle3: { type: 'Essential Nutrients', units: '39' },
+  circle4: { type: 'Omega-3', units: '450mg' },
+  circle5: { type: 'Total Sugars', units: '3g' },
 };
 
 export default completeEnergy;

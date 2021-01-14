@@ -305,6 +305,40 @@ a {
     width: 56%;
 }
 
+.item-container .info-container {
+    display: flex;
+    flex-direction: column;
+    width: 44%;
+    padding-left: 40px;
+}
+
+.item-container .info-container .product-name {
+    font-size: 50px;
+    font-weight: 500;
+    margin: 30px 0;
+}
+
+.item-container .info-container .product-desc {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.circle {
+    height: 100px;
+    background-color: red;
+    color: #FFFFFF;
+}
+
+.circle-text {
+    height: 100px;
+    background-color: blue;
+    color: #FFFFFF;
+}
+
+.circle-container, .circle-card {
+    width: 100%;
+}
+
 @media (min-width: 768px) {
     .shop-container, .item-container {
         width: 760px;

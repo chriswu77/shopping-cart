@@ -12,11 +12,11 @@ const completeProtein = {
   shopPic: proteinShop,
   hoverPic: proteinHover,
   itemPic: proteinItem,
-  circle1: ['Plant-Based Protein', '30g'],
-  circle2: ['Essential Nutrients', '39'],
-  circle3: ['Total Sugars', '0g'],
-  circle4: ['BCAAs', '5g'],
-  circle5: ['Omega-3', '600mg'],
+  circle1: { type: 'Plant-Based Protein', units: '30g' },
+  circle2: { type: 'Essential Nutrients', units: '39' },
+  circle3: { type: 'Total Sugars', units: '0g' },
+  circle4: { type: 'BCAAs', units: '5g' },
+  circle5: { type: 'Omega-3', units: '600mg' },
 };
 
 export default completeProtein;

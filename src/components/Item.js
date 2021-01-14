@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import completeMeal from '../completeMeal';
 import completeProtein from '../completeProtein';
 import completeEnergy from '../completeEnergy';
+import Circles from './Circles';
 
 const Item = () => {
   const { id } = useParams();
@@ -13,7 +14,6 @@ const Item = () => {
     allProducts.push(completeProtein, completeEnergy);
     const foundItem = allProducts.find((item) => item.id === id);
     setProduct(foundItem);
-    console.log(foundItem);
   };
 
   useEffect(() => {
@@ -59,6 +59,17 @@ const Item = () => {
           style={{ height: imgHeight }}
           className="item-pic"
         />
+        <div className="info-container">
+          <h1 className="product-name">{product.name}</h1>
+          <p className="product-desc">{product.itemDesc}</p>
+          <Circles
+            circle1={product.circle1}
+            circle2={product.circle2}
+            circle3={product.circle3}
+            circle4={product.circle4}
+            circle5={product.circle5}
+          />
+        </div>
       </div>
     </div>
   );
