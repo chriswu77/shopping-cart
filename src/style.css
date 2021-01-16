@@ -323,20 +323,42 @@ a {
     margin: 0;
 }
 
-.circle {
-    height: 100px;
-    background-color: red;
-    color: #FFFFFF;
-}
-
-.circle-text {
-    height: 100px;
-    background-color: blue;
-    color: #FFFFFF;
-}
-
-.circle-container, .circle-card {
+.circle-container {
+    display: flex;
     width: 100%;
+    margin-top: 35px;
+}
+
+.circle-container .circle-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 20%;
+}
+
+.circle-container .circle-card .circle {
+    font-size: .875rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #505050;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.circle-container .circle-card .circle-text {
+    font-size: .75rem;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.dropdown {
+    width: 277px;
+    box-sizing: border-box;
 }
 
 @media (min-width: 768px) {

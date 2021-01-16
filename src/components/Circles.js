@@ -22,9 +22,24 @@ const Circles = ({ circle1, circle2, circle3, circle4, circle5 }) => {
   return (
     <div className="circle-container">
       <div className="circle-card">
-        <div className="circle">{one.type}</div>
-        <div className="circle-text">{}</div>
-        <div>yolo</div>
+        <div className="circle">{one.units}</div>
+        <div className="circle-text">{one.type}</div>
+      </div>
+      <div className="circle-card">
+        <div className="circle">{two.units}</div>
+        <div className="circle-text">{two.type}</div>
+      </div>
+      <div className="circle-card">
+        <div className="circle">{three.units}</div>
+        <div className="circle-text">{three.type}</div>
+      </div>
+      <div className="circle-card">
+        <div className="circle">{four.units}</div>
+        <div className="circle-text">{four.type}</div>
+      </div>
+      <div className="circle-card">
+        <div className="circle">{five.units}</div>
+        <div className="circle-text">{five.type}</div>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import completeMeal from '../completeMeal';
 import completeProtein from '../completeProtein';
 import completeEnergy from '../completeEnergy';
 import Circles from './Circles';
+import Dropdown from './Dropdown';
 
 const Item = () => {
   const { id } = useParams();
@@ -47,6 +48,23 @@ const Item = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, [dimensions, imgWidth]);
 
+  let dropdown;
+
+  if (
+    id === 'soylent-drink-creamy-chocolate' ||
+    id === 'soylent-drink-vanilla' ||
+    id === 'soylent-drink-original'
+  ) {
+    const flavors = [
+      { value: 'soylent-drink-creamy-chocolate', label: 'Creamy Chocolate' },
+      { value: 'soylent-drink-vanilla', label: 'Vanilla' },
+      { value: 'soylent-drink-original', label: 'Original' },
+    ];
+    dropdown = Dropdown(flavors);
+  } else {
+    dropdown = null;
+  }
+
   return (
     <div className="container">
       <div className="item-container">
@@ -69,6 +87,7 @@ const Item = () => {
             circle4={product.circle4}
             circle5={product.circle5}
           />
+          {dropdown}
         </div>
       </div>
     </div>
