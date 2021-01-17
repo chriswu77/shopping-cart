@@ -5,6 +5,7 @@ import completeProtein from '../completeProtein';
 import completeEnergy from '../completeEnergy';
 import Circles from './Circles';
 import Dropdown from './Dropdown';
+import Quantity from './Quantity';
 
 const Item = () => {
   const { id } = useParams();
@@ -60,7 +61,16 @@ const Item = () => {
       { value: 'soylent-drink-vanilla', label: 'Vanilla' },
       { value: 'soylent-drink-original', label: 'Original' },
     ];
-    dropdown = Dropdown(flavors);
+    const currentFlavor = flavors.find((flavor) => flavor.value === id);
+    // dropdown = Dropdown(flavors, currentFlavor);
+    dropdown = (
+      <div className="flavors-container">
+        <label htmlFor="flavors" className="flavors-heading">
+          Flavors
+        </label>
+        {Dropdown(flavors, currentFlavor)}
+      </div>
+    );
   } else {
     dropdown = null;
   }
@@ -88,6 +98,7 @@ const Item = () => {
             circle5={product.circle5}
           />
           {dropdown}
+          <Quantity />
         </div>
       </div>
     </div>

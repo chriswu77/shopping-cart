@@ -356,9 +356,81 @@ a {
     text-align: center;
 }
 
+.flavors-container {
+    margin-top: 25px;
+}
+
+.flavors-heading {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
 .dropdown {
     width: 277px;
     box-sizing: border-box;
+    cursor: pointer;
+    margin-top: 14px;
+}
+
+.quantity-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.quantity-container .quantity-heading {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.quantity-container .quantity-wrapper {
+    display: flex;
+}
+
+.quantity-container .quantity-wrapper .quantity-adjuster {
+    display: inline-block;
+    height: 40px;
+    border: 2px solid #212322;
+    font-size: 0;
+    box-sizing: border-box;
+}
+
+.quantity-container .quantity-wrapper .quantity-adjuster .dec-btn:disabled {
+    opacity: .25;
+}
+
+.quantity-adjuster button {
+    position: relative;
+    border: none;
+    background: none;
+    padding: 0;
+    height: 36px;
+    width: 38px;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+}
+.quantity-adjuster input {
+    width: 82px;
+    padding: 0;
+    border: 2px solid #212322;
+    border-width: 0 2px;
+    border-radius: 0;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    height: 36px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.quantity-adjuster button:focus, .quantity-adjuster input:focus {
+    outline: none;
 }
 
 @media (min-width: 768px) {

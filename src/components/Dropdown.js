@@ -3,12 +3,14 @@ import React from 'react';
 import Select from 'react-select';
 import { useHistory } from 'react-router-dom';
 
-const Dropdown = (options) => {
+const Dropdown = (options, current) => {
   const history = useHistory();
 
   const handleClick = (id) => {
-    history.push(`/shop/${id}`);
-    history.go(0);
+    if (current.value !== id) {
+      history.push(`/shop/${id}`);
+      history.go(0);
+    }
   };
 
   const customStyles = {
@@ -17,10 +19,11 @@ const Dropdown = (options) => {
       padding: '.75rem 1.2rem',
       lineHeight: 'inherit',
       transition: 'all .05s ease-in-out',
-      fontSize: '1rem',
+      fontSize: '1.1rem',
       color: state.isSelected ? '#ffffff' : '#2d2d2d',
       backgroundColor: state.isSelected ? '#2d2d2d' : '#ffffff',
       fontWeight: 400,
+      cursor: 'pointer',
       ':hover': {
         backgroundColor: '#2d2d2d',
         color: '#ffffff',
@@ -31,7 +34,7 @@ const Dropdown = (options) => {
       width: 277,
       background: '#ffffff',
       border: '2px solid #2d2d2d',
-      fontSize: 16,
+      fontSize: '1.1rem',
       color: '#2d2d2d',
     }),
     singleValue: (provided) => ({
@@ -56,10 +59,12 @@ const Dropdown = (options) => {
 
   return (
     <Select
+      defaultValue={current}
       options={options}
       className="dropdown"
       styles={customStyles}
       onChange={(value) => handleClick(value.value)}
+      isSearchable={false}
     />
   );
 };
