@@ -130,6 +130,11 @@ nav {
     margin-top: 2rem;
 }
 
+.cart-btn-wrapper {
+    background-color: #47AF19;
+    margin-top: 35px;
+}
+
 .shop-now-btn {
     display: inline-block;
     position: relative;
@@ -145,6 +150,11 @@ nav {
     width: fit-content;
 }
 
+.cart-btn {
+    background: #47AF19;
+    color: #FFFFFF;
+}
+
 .shop-now-btn:focus {
     outline: none;
 }
@@ -153,7 +163,12 @@ nav {
     display: block;
     padding: 0.75rem;
 }
-.shop-now-btn::before, .shop-now-btn::after{
+
+.cart-btn-span {
+    padding: 12px 71px;
+}
+
+.shop-now-btn::before, .shop-now-btn::after {
     content:"";
     width: 0;
     height: 2px;
@@ -162,7 +177,7 @@ nav {
     background: #2d2d2d;
 }
 
-.shop-now-span::before, .shop-now-span::after{
+.shop-now-span::before, .shop-now-span::after {
     content:"";
     width:2px;
     height:0;
@@ -170,6 +185,11 @@ nav {
     transition: all 0.2s linear;
     background: #2d2d2d;
 }
+
+.cart-btn::before, .cart-btn::after, .cart-btn-span::before, .cart-btn-span::after {
+    background: #FFFFFF;
+}
+
 .shop-now-btn:hover::before, .shop-now-btn:hover::after{
     width: 100%;
 }
@@ -315,7 +335,8 @@ a {
 .item-container .info-container .product-name {
     font-size: 50px;
     font-weight: 500;
-    margin: 30px 0;
+    margin-top: 0;
+    margin-bottom: 25px;
 }
 
 .item-container .info-container .product-desc {
@@ -369,12 +390,13 @@ a {
     width: 277px;
     box-sizing: border-box;
     cursor: pointer;
-    margin-top: 14px;
+    margin-top: 5px;
 }
 
 .quantity-container {
     display: flex;
     flex-direction: column;
+    margin-top: 25px;
 }
 
 .quantity-container .quantity-heading {
@@ -384,13 +406,13 @@ a {
 
 .quantity-container .quantity-wrapper {
     display: flex;
+    margin-top: 5px;
 }
 
 .quantity-container .quantity-wrapper .quantity-adjuster {
     display: inline-block;
     height: 40px;
     border: 2px solid #212322;
-    font-size: 0;
     box-sizing: border-box;
 }
 
@@ -408,6 +430,8 @@ a {
     text-align: center;
     vertical-align: top;
     cursor: pointer;
+    font-weight: 700;
+    font-size: 1.5rem;
 }
 .quantity-adjuster input {
     width: 82px;
@@ -432,6 +456,32 @@ input[type=number]::-webkit-outer-spin-button {
 .quantity-adjuster button:focus, .quantity-adjuster input:focus {
     outline: none;
 }
+
+.quantity-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    margin-left: 7px;
+    font-weight: 500;
+}
+
+.price-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+}
+
+.price-container .item-price {
+    font-size: 2.25rem;
+    letter-spacing: 0;
+    line-height: 1.167;
+    font-weight: 600;
+}
+
+.price-container .per-bottle {
+    font-size: 1rem;
+} 
 
 @media (min-width: 768px) {
     .shop-container, .item-container {

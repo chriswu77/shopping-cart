@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import completeMeal from '../completeMeal';
 import completeProtein from '../completeProtein';
 import completeEnergy from '../completeEnergy';
@@ -10,12 +10,14 @@ import Quantity from './Quantity';
 const Item = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
+  const [price, setPrice] = useState(0);
 
   const getProduct = () => {
     const allProducts = [...completeMeal];
     allProducts.push(completeProtein, completeEnergy);
     const foundItem = allProducts.find((item) => item.id === id);
     setProduct(foundItem);
+    setPrice(foundItem.price);
   };
 
   useEffect(() => {
@@ -62,11 +64,10 @@ const Item = () => {
       { value: 'soylent-drink-original', label: 'Original' },
     ];
     const currentFlavor = flavors.find((flavor) => flavor.value === id);
-    // dropdown = Dropdown(flavors, currentFlavor);
     dropdown = (
       <div className="flavors-container">
         <label htmlFor="flavors" className="flavors-heading">
-          Flavors
+          FLAVORS
         </label>
         {Dropdown(flavors, currentFlavor)}
       </div>
@@ -74,6 +75,8 @@ const Item = () => {
   } else {
     dropdown = null;
   }
+
+  const formatPrice = () => `$${price.toFixed(2)}`;
 
   return (
     <div className="container">
@@ -90,6 +93,17 @@ const Item = () => {
         <div className="info-container">
           <h1 className="product-name">{product.name}</h1>
           <p className="product-desc">{product.itemDesc}</p>
+          <div className="price-container">
+            <span className="item-price">{formatPrice()}</span>
+            <span className="per-bottle">{product.pricePerBottle}</span>
+          </div>
+          <Quantity pricePer={product.price} setPrice={setPrice} />
+          {dropdown}
+          <div className="shop-btn-wrapper cart-btn-wrapper">
+            <div className="shop-now-btn cart-btn">
+              <span className="shop-now-span cart-btn-span">ADD TO CART</span>
+            </div>
+          </div>
           <Circles
             circle1={product.circle1}
             circle2={product.circle2}
@@ -97,8 +111,6 @@ const Item = () => {
             circle4={product.circle4}
             circle5={product.circle5}
           />
-          {dropdown}
-          <Quantity />
         </div>
       </div>
     </div>
