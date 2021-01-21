@@ -1,5 +1,6 @@
+/* eslint-disable react/jsx-curly-newline */
 import React, { useState, useEffect, useRef } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import completeMeal from '../completeMeal';
 import completeProtein from '../completeProtein';
 import completeEnergy from '../completeEnergy';
@@ -7,10 +8,11 @@ import Circles from './Circles';
 import Dropdown from './Dropdown';
 import Quantity from './Quantity';
 
-const Item = () => {
+const Item = ({ addToCart }) => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [price, setPrice] = useState(0);
+  const [quantity, setQuantity] = useState(1);
 
   const getProduct = () => {
     const allProducts = [...completeMeal];
@@ -97,13 +99,24 @@ const Item = () => {
             <span className="item-price">{formatPrice()}</span>
             <span className="per-bottle">{product.pricePerBottle}</span>
           </div>
-          <Quantity pricePer={product.price} setPrice={setPrice} />
+          <Quantity
+            quantity={quantity}
+            setQuantity={setQuantity}
+            pricePer={product.price}
+            setPrice={setPrice}
+          />
           {dropdown}
-          <div className="shop-btn-wrapper cart-btn-wrapper">
+          <button
+            type="button"
+            className="shop-btn-wrapper cart-btn-wrapper"
+            onClick={() =>
+              addToCart(product.shopPic, quantity, product.price, product.name)
+            }
+          >
             <div className="shop-now-btn cart-btn">
               <span className="shop-now-span cart-btn-span">ADD TO CART</span>
             </div>
-          </div>
+          </button>
           <Circles
             circle1={product.circle1}
             circle2={product.circle2}

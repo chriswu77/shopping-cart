@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 
-const Quantity = ({ pricePer, setPrice }) => {
-  const [quantity, setQuantity] = useState(1);
+const Quantity = ({ quantity, setQuantity, pricePer, setPrice }) => {
+  // const [quantity, setQuantity] = useState(1);
   const [bottles, setBottles] = useState(12);
   let decBtn = useRef(null);
 

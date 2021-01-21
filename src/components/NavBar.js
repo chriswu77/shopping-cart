@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import logo from '../imgs/logo.png';
 import shoppingBag from '../imgs/shopping_bag.svg';
 
-const NavBar = ({ totalCount }) => {
+const NavBar = ({ toggleCart, totalCount }) => {
   let countDiv;
-
   if (totalCount > 0) {
     countDiv = <div className="cart-count">{totalCount}</div>;
   } else {
@@ -23,7 +22,7 @@ const NavBar = ({ totalCount }) => {
             SHOP
           </button>
         </Link>
-        <button className="bag-btn" type="button">
+        <button className="bag-btn" type="button" onClick={toggleCart}>
           <img src={shoppingBag} alt="shopping bag" />
           {countDiv}
         </button>

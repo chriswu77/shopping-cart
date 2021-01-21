@@ -24,7 +24,7 @@ nav {
     position: fixed;
     height: 91px;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
-    z-index: 9999;
+    z-index: 1000;
     width: 100%;
     background-color: #FFFFFF;
 }
@@ -133,6 +133,12 @@ nav {
 .cart-btn-wrapper {
     background-color: #47AF19;
     margin-top: 35px;
+    cursor: pointer;
+    border: none;
+}
+
+.cart-btn-wrapper:focus {
+    outline: none;
 }
 
 .shop-now-btn {
@@ -482,6 +488,62 @@ input[type=number]::-webkit-outer-spin-button {
 .price-container .per-bottle {
     font-size: 1rem;
 } 
+
+.modal {
+  visibility: hidden;
+}
+
+.backdrop {
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #212322;
+    opacity: 0;
+    transition: all .3s cubic-bezier(.13,.58,.15,.95);
+}
+
+.modal .cart-container {
+    position: fixed;
+    z-index: 2001;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 390px;
+    background-color: #ffffff;
+    padding: 2rem;
+    transform: translateX(100%);
+    transition: all .3s ease-in-out; 
+}
+
+.modal .cart-container .cart-heading {
+    display: flex;
+}
+
+.modal .cart-container .cart-heading .title {
+    font-size: 1.875rem;
+    margin: 0;
+}
+.modal .cart-container .cart-heading .x-btn {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.modal .cart-container .cart-heading .x-btn:focus {
+    outline: none;
+}
+
+.modal .cart-container .cart-heading .x-btn .x-btn-svg {
+    position: relative;
+    top: 1px;
+    height: 33px;
+    width: 33px;
+}
 
 @media (min-width: 768px) {
     .shop-container, .item-container {
