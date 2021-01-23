@@ -109,9 +109,17 @@ const Item = ({ addToCart }) => {
           <button
             type="button"
             className="shop-btn-wrapper cart-btn-wrapper"
-            onClick={() =>
-              addToCart(product.shopPic, quantity, product.price, product.name)
-            }
+            onClick={() => {
+              if (quantity > 0) {
+                addToCart(
+                  product.shopPic,
+                  quantity,
+                  product.price,
+                  product.name,
+                  product.id
+                );
+              }
+            }}
           >
             <div className="shop-now-btn cart-btn">
               <span className="shop-now-span cart-btn-span">ADD TO CART</span>
