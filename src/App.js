@@ -15,7 +15,17 @@ const App = () => {
   const [showCart, setShowCart] = useState(false);
   const [totalCount, setTotalCount] = useState(0);
 
+  const getTotalItems = () => {
+    if (cart.length > 0) {
+      const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+      setTotalCount(totalItems);
+    } else if (cart.length === 0) {
+      setTotalCount(0);
+    }
+  };
+
   useEffect(() => {
+    getTotalItems();
     localStorage.setItem('cart', JSON.stringify(cart));
     console.log(cart);
   }, [cart]);
@@ -66,7 +76,7 @@ const App = () => {
   return (
     <div className="App">
       <BrowserRouter>
-        <NavBar toggleCart={toggleCart} />
+        <NavBar toggleCart={toggleCart} totalCount={totalCount} />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/shop" component={Shop} />
@@ -80,6 +90,7 @@ const App = () => {
           toggleCart={toggleCart}
           updateQuantity={updateQuantity}
           removeFromCart={removeFromCart}
+          totalCount={totalCount}
         />
       </BrowserRouter>
     </div>

@@ -2,12 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../imgs/logo.png';
 import shoppingBag from '../imgs/shopping_bag.svg';
+import greenBag from '../imgs/green_bag.svg';
 
 const NavBar = ({ toggleCart, totalCount }) => {
+  let bagImg;
   let countDiv;
   if (totalCount > 0) {
+    bagImg = <img src={greenBag} alt="shopping bag" />;
     countDiv = <div className="cart-count">{totalCount}</div>;
   } else {
+    bagImg = <img src={shoppingBag} alt="shopping bag" />;
     countDiv = null;
   }
 
@@ -23,7 +27,8 @@ const NavBar = ({ toggleCart, totalCount }) => {
           </button>
         </Link>
         <button className="bag-btn" type="button" onClick={toggleCart}>
-          <img src={shoppingBag} alt="shopping bag" />
+          {/* <img src={shoppingBag} alt="shopping bag" /> */}
+          {bagImg}
           {countDiv}
         </button>
       </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import xv2 from '../imgs/xv2.svg';
 import CartQuantity from './CartQuantity';
@@ -9,6 +9,7 @@ const Cart = ({
   toggleCart,
   updateQuantity,
   removeFromCart,
+  totalCount,
 }) => {
   let modal = useRef(null);
   let backdrop = useRef(null);
@@ -34,7 +35,25 @@ const Cart = ({
       cartModal.style.transform = 'translateX(100%)';
       document.removeEventListener('click', handleOutsideClick);
     }
-  }, [showCart, cart]);
+  }, [showCart, cart, totalCount]);
+
+  const [subtotal, setTotal] = useState(0);
+
+  const calcTotal = () => {
+    if (cart.length > 0) {
+      const cost = cart.reduce(
+        (total, item) => total + item.price * item.quantity,
+        0
+      );
+      setTotal(cost);
+    } else {
+      setTotal(0);
+    }
+  };
+
+  useEffect(() => {
+    calcTotal();
+  }, [subtotal, cart]);
 
   const formatAmt = (amt) => `$${amt.toFixed(2)}`;
 
@@ -96,6 +115,12 @@ const Cart = ({
               </li>
             ))}
           </ul>
+        </div>
+        <div className="cart-footer">
+          <div className="subtotal-container">
+            <h6>Subtotal</h6>
+            <h5>{formatAmt(subtotal)}</h5>
+          </div>
         </div>
       </div>
     </div>

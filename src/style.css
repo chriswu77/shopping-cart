@@ -84,7 +84,8 @@ nav {
     line-height: 18px;
     border-radius: 50%;
     background-color: #47af19;
-    color: #2d2d2d;
+    /* color: #2d2d2d; */
+    color: #FFFFFF;
     text-align: center;
     font-size: 14px;
 }
@@ -552,7 +553,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .cart-items {
     padding-top: 1rem;
-    padding-bottom: 2rem;
+    /* padding-bottom: 2rem; */
 }
 
 .cart-items .cart-list {
@@ -640,7 +641,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 .delete-item-btn {
     width: fit-content;
-    color: #47af19;
+    /* color: #47af19; */
+    color: rgb(255, 0, 0);
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: .12em;
@@ -653,6 +655,34 @@ input[type=number]::-webkit-outer-spin-button {
 
 .delete-item-btn:focus {
     outline: none;
+}
+
+.cart-footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-footer .subtotal-container {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid #2d2d2d;
+    padding-top: 1rem;
+}
+
+.cart-footer .subtotal-container h6 {
+    font-size: 1.125rem;
+    letter-spacing: .06em;
+    line-height: 1.167;
+    margin: 0;
+    height: fit-content;
+    align-self: center;
+}
+
+.cart-footer .subtotal-container h5 {
+    font-size: 1.875rem;
+    letter-spacing: 0;
+    line-height: 1.167;
+    margin: 0;
 }
 
 @media (min-width: 768px) {
