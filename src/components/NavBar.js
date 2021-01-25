@@ -27,7 +27,6 @@ const NavBar = ({ toggleCart, totalCount }) => {
           </button>
         </Link>
         <button className="bag-btn" type="button" onClick={toggleCart}>
-          {/* <img src={shoppingBag} alt="shopping bag" /> */}
           {bagImg}
           {countDiv}
         </button>

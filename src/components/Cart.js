@@ -92,9 +92,9 @@ const Cart = ({
                     src={item.pic}
                     alt={item.name}
                   />
-                  <Link className="cart-item-name" to={`/shop/${item.nameId}`}>
+                  <a className="cart-item-name" href={`/shop/${item.nameId}`}>
                     {item.name}
-                  </Link>
+                  </a>
                 </div>
                 <div className="cart-item-part">
                   <CartQuantity
@@ -116,12 +116,23 @@ const Cart = ({
             ))}
           </ul>
         </div>
-        <div className="cart-footer">
-          <div className="subtotal-container">
-            <h6>Subtotal</h6>
-            <h5>{formatAmt(subtotal)}</h5>
+        {cart.length > 0 && (
+          <div className="cart-footer">
+            <div className="subtotal-container">
+              <h6>Subtotal</h6>
+              <h5>{formatAmt(subtotal)}</h5>
+            </div>
+            <Link to="/">
+              <button
+                type="button"
+                className="checkout-btn"
+                onClick={toggleCart}
+              >
+                CHECKOUT
+              </button>
+            </Link>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

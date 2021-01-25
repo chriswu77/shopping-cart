@@ -84,7 +84,6 @@ nav {
     line-height: 18px;
     border-radius: 50%;
     background-color: #47af19;
-    /* color: #2d2d2d; */
     color: #FFFFFF;
     text-align: center;
     font-size: 14px;
@@ -355,6 +354,7 @@ a {
     display: flex;
     width: 100%;
     margin-top: 35px;
+    margin-bottom: 30px;
 }
 
 .circle-container .circle-card {
@@ -492,7 +492,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 .modal {
   visibility: hidden;
-  /* overflow-y: hidden; */
 }
 
 .backdrop {
@@ -518,7 +517,8 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 2rem;
     transform: translateX(100%);
     transition: all .3s ease-in-out; 
-    overflow: scroll;
+    overflow: auto;
+    width: fit-content;
 }
 
 .modal .cart-container .cart-heading {
@@ -553,7 +553,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .cart-items {
     padding-top: 1rem;
-    /* padding-bottom: 2rem; */
+    width: fit-content;
 }
 
 .cart-items .cart-list {
@@ -562,6 +562,7 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 0;
     display: flex;
     flex-direction: column;
+    width: fit-content;
 }
 
 .cart-items .cart-list .cart-item {
@@ -594,12 +595,10 @@ input[type=number]::-webkit-outer-spin-button {
 
 /** shopping cart quantity **/
 .quantity-cart {
-    /* margin-top: 10px; */
     display: inline-block;
     height: 40px;
     border: 2px solid #212322;
     box-sizing: border-box;
-    /* width: 130px; */
 }
 
 .quantity-cart button{
@@ -641,7 +640,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 .delete-item-btn {
     width: fit-content;
-    /* color: #47af19; */
     color: rgb(255, 0, 0);
     font-size: 1rem;
     font-weight: 600;
@@ -660,6 +658,7 @@ input[type=number]::-webkit-outer-spin-button {
 .cart-footer {
     display: flex;
     flex-direction: column;
+    width: 290px;
 }
 
 .cart-footer .subtotal-container {
@@ -683,6 +682,51 @@ input[type=number]::-webkit-outer-spin-button {
     letter-spacing: 0;
     line-height: 1.167;
     margin: 0;
+}
+
+/** checkout button **/
+.checkout-btn {
+    background-color: #FFFFFF;
+    color: #2d2d2d;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    font-size: 1rem;
+    letter-spacing: .12em;
+    line-height: 1;
+    padding: 19.5px 90px;
+    max-width: 100%;
+    font-weight: 700;
+    cursor: pointer;
+    border: 2px solid #2d2d2d;
+    margin-top: 15px;
+}
+.checkout-btn:focus {
+    outline: none;
+}
+.checkout-btn:hover {
+    color: #FFFFFF;
+}
+.checkout-btn::after {
+    content: "";
+    background: #47AF19;
+    color: #FFFFFF;
+    position: absolute;
+    z-index: -1;
+    padding: 0.85em 0.75em;
+    display: block;
+    transition: all 0.2s ease-in;
+    left: 0;
+    right: 0;
+    top: 100%;
+    bottom: -100%;
+}
+.checkout-btn:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all 0.2s ease-in;
 }
 
 @media (min-width: 768px) {

@@ -11,7 +11,6 @@ const App = () => {
   const [cart, setCart] = useState(
     JSON.parse(localStorage.getItem('cart')) || []
   );
-  // const [totalPrice, setTotalPrice] = useState(0);
   const [showCart, setShowCart] = useState(false);
   const [totalCount, setTotalCount] = useState(0);
 
@@ -27,7 +26,6 @@ const App = () => {
   useEffect(() => {
     getTotalItems();
     localStorage.setItem('cart', JSON.stringify(cart));
-    console.log(cart);
   }, [cart]);
 
   const toggleCart = () => {
