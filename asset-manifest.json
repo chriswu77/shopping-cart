@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.2ef88eb3.chunk.css",
+    "main.js": "/shopping-cart/static/js/main.3b58efd3.chunk.js",
+    "main.js.map": "/shopping-cart/static/js/main.3b58efd3.chunk.js.map",
+    "runtime-main.js": "/shopping-cart/static/js/runtime-main.b56c1ee8.js",
+    "runtime-main.js.map": "/shopping-cart/static/js/runtime-main.b56c1ee8.js.map",
+    "static/js/2.54d42ee5.chunk.js": "/shopping-cart/static/js/2.54d42ee5.chunk.js",
+    "static/js/2.54d42ee5.chunk.js.map": "/shopping-cart/static/js/2.54d42ee5.chunk.js.map",
+    "index.html": "/shopping-cart/index.html",
+    "static/css/main.2ef88eb3.chunk.css.map": "/shopping-cart/static/css/main.2ef88eb3.chunk.css.map",
+    "static/js/2.54d42ee5.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.54d42ee5.chunk.js.LICENSE.txt",
+    "static/media/choc_hover.7b9f2a19.jpg": "/shopping-cart/static/media/choc_hover.7b9f2a19.jpg",
+    "static/media/choc_item.38ab4f4a.jpg": "/shopping-cart/static/media/choc_item.38ab4f4a.jpg",
+    "static/media/energy_hover.1cb55bd0.jpg": "/shopping-cart/static/media/energy_hover.1cb55bd0.jpg",
+    "static/media/energy_item.74f9f4a3.jpg": "/shopping-cart/static/media/energy_item.74f9f4a3.jpg",
+    "static/media/green_bag.4fa3b693.svg": "/shopping-cart/static/media/green_bag.4fa3b693.svg",
+    "static/media/style.css": "/shopping-cart/static/media/landing_page.88f34b90.png",
+    "static/media/original_hover.e806cd26.jpg": "/shopping-cart/static/media/original_hover.e806cd26.jpg",
+    "static/media/original_item.1f5b8f5e.jpg": "/shopping-cart/static/media/original_item.1f5b8f5e.jpg",
+    "static/media/protein_hover.80fceaab.jpg": "/shopping-cart/static/media/protein_hover.80fceaab.jpg",
+    "static/media/protein_item.8da53a5b.jpg": "/shopping-cart/static/media/protein_item.8da53a5b.jpg",
+    "static/media/shopping_bag.5e98ce94.svg": "/shopping-cart/static/media/shopping_bag.5e98ce94.svg",
+    "static/media/vanilla_hover.a9fd923c.jpg": "/shopping-cart/static/media/vanilla_hover.a9fd923c.jpg",
+    "static/media/vanilla_item.d46e747c.jpg": "/shopping-cart/static/media/vanilla_item.d46e747c.jpg",
+    "static/media/xv2.2001e956.svg": "/shopping-cart/static/media/xv2.2001e956.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b56c1ee8.js",
+    "static/js/2.54d42ee5.chunk.js",
+    "static/css/main.2ef88eb3.chunk.css",
+    "static/js/main.3b58efd3.chunk.js"
+  ]
+}
