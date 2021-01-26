@@ -8,7 +8,7 @@ const Home = () => (
         <h1 className="home-text">Complete Protein &</h1>
         <h1 className="home-text">Complete Energy</h1>
         <h1 className="home-text">Have Arrived!</h1>
-        <Link to="/shop" className="shop-btn-wrapper">
+        <Link to="/shopping-cart/shop" className="shop-btn-wrapper">
           <div className="shop-now-btn">
             <span className="shop-now-span">SHOP NOW</span>
           </div>

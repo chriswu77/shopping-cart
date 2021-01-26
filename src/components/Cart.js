@@ -92,7 +92,10 @@ const Cart = ({
                     src={item.pic}
                     alt={item.name}
                   />
-                  <a className="cart-item-name" href={`/shop/${item.nameId}`}>
+                  <a
+                    className="cart-item-name"
+                    href={`/shopping-cart/shop/${item.nameId}`}
+                  >
                     {item.name}
                   </a>
                 </div>
@@ -122,7 +125,7 @@ const Cart = ({
               <h6>Subtotal</h6>
               <h5>{formatAmt(subtotal)}</h5>
             </div>
-            <Link to="/">
+            <Link to="/shopping-cart">
               <button
                 type="button"
                 className="checkout-btn"

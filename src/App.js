@@ -76,9 +76,9 @@ const App = () => {
       <BrowserRouter>
         <NavBar toggleCart={toggleCart} totalCount={totalCount} />
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/shop" component={Shop} />
-          <Route path="/shop/:id">
+          <Route exact path="/shopping-cart" component={Home} />
+          <Route exact path="/shopping-cart/shop" component={Shop} />
+          <Route path="/shopping-cart/shop/:id">
             <Item addToCart={addToCart} />
           </Route>
         </Switch>

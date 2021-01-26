@@ -18,10 +18,10 @@ const NavBar = ({ toggleCart, totalCount }) => {
   return (
     <nav>
       <div className="nav-wrapper">
-        <Link to="/">
+        <Link to="/shopping-cart">
           <img className="logo" src={logo} alt="logo" />
         </Link>
-        <Link to="/shop">
+        <Link to="/shopping-cart/shop">
           <button className="shop-btn" type="button">
             SHOP
           </button>

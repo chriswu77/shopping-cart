@@ -8,7 +8,7 @@ const Dropdown = (options, current) => {
 
   const handleClick = (id) => {
     if (current.value !== id) {
-      history.push(`/shop/${id}`);
+      history.push(`/shopping-cart/shop/${id}`);
       history.go(0);
     }
   };
