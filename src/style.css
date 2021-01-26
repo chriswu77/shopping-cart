@@ -42,6 +42,7 @@ nav {
 .nav-wrapper .logo {
     width: 106px;
     height: 50px;
+    transform: translateZ(0);
 }
 
 .nav-wrapper .shop-btn {
@@ -729,6 +730,89 @@ input[type=number]::-webkit-outer-spin-button {
     transition: all 0.2s ease-in;
 }
 
+@media (max-width: 600px) {
+    nav {
+        height: 80px;
+    }
+    .nav-wrapper {
+        padding: 0 20px;
+    }
+    .nav-wrapper > a[href="/"] {
+        order: 2;
+    }
+    .nav-wrapper > a[href="/shop"] {
+        order: 1;
+    }
+    .nav-wrapper > button {
+        order: 3;
+    }
+    .container {
+        top: 80px;
+        height: calc(100% - 80px);
+    }
+    .container .home-container {
+        background-position: 30% 100%;
+        background-size: 500px;
+        overflow-x: hidden;
+        align-items: inherit;
+    }
+    .container .home-container .home-content {
+        margin-top: 15vh;
+        transform: translateX(0%);
+        padding: 0 20px;
+    }
+    .home-text {
+        font-size: 50px;
+        line-height: 1.09;
+    }
+    .shop-btn-wrapper {
+        margin-top: 8vh;
+    }
+    .shop-container {
+        padding: 0 20px;
+    }
+    .shop-heading {
+        font-size: 30px;
+    }
+    .shop-desc {
+        font-size: 18px;
+        margin-bottom: 0;
+    }
+    .shop-cards {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .shop-card {
+        width: 100%;
+        margin-top: 32px;
+    }
+    .item-container {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+    .item-container .item-pic {
+        width: 100%;
+    }
+    .item-container .info-container {
+        width: 100%;
+        padding-left: 0;
+    }
+    .item-container .info-container .product-name {
+        font-size: 30px;
+        margin: 25px 0;
+        font-weight: 600;
+    }
+    .item-container .info-container .shop-btn-wrapper {
+        margin-top: 35px;
+    }
+    .price-container .item-price {
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .checkout-btn {
+        padding: 15px 90px;
+    }
+}
 @media (min-width: 768px) {
     .shop-container, .item-container {
         width: 760px;
@@ -750,5 +834,8 @@ input[type=number]::-webkit-outer-spin-button {
 @media (min-width: 1800px) {
     .shop-container, .item-container {
         width: 1790px;
+    }
+    .container .home-container .home-content {
+        padding: 0 100px;
     }
 }
