@@ -4,10 +4,12 @@ const CartQuantity = ({ id, quantity, setQuantity }) => {
   let decBtn = useRef(null);
 
   useEffect(() => {
-    if (quantity <= 1) {
+    if (quantity === 0 || quantity === 1) {
       decBtn.setAttribute('disabled', 'disabled');
+    } else {
+      decBtn.removeAttribute('disabled');
     }
-  }, []);
+  }, [quantity]);
 
   const updateBtns = (inputVal) => {
     if (inputVal === '0' || inputVal === '1' || inputVal === '') {
