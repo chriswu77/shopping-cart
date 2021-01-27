@@ -51,6 +51,10 @@ nav {
     padding: 27px 0;
     cursor: pointer;
     font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    letter-spacing: .03em;
+    line-height: 1.188;
 }
 
 .nav-wrapper .shop-btn:focus {
@@ -155,6 +159,7 @@ nav {
     line-height: 1;
     font-weight: 600;
     width: fit-content;
+    font-family: 'Raleway', sans-serif;
 }
 
 .cart-btn {
@@ -588,10 +593,22 @@ input[type=number]::-webkit-outer-spin-button {
     color: #2d2d2d;
     font-weight: 600;
     height: fit-content;
+    width: fit-content;
     font-size: 1.125rem;
     letter-spacing: .06em;
     line-height: 1.167;
     margin-left: 2rem;
+    padding: 0;
+    background: transparent;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+}
+
+.cart-item-name:focus {
+    outline: none;
 }
 
 /** shopping cart quantity **/
@@ -650,6 +667,7 @@ input[type=number]::-webkit-outer-spin-button {
     border: none;
     margin-top: 10px;
     cursor: pointer;
+    font-family: 'Raleway', sans-serif;
 }
 
 .delete-item-btn:focus {
@@ -701,6 +719,7 @@ input[type=number]::-webkit-outer-spin-button {
     cursor: pointer;
     border: 2px solid #2d2d2d;
     margin-top: 15px;
+    font-family: 'Raleway', sans-serif;
 }
 .checkout-btn:focus {
     outline: none;
@@ -737,13 +756,13 @@ input[type=number]::-webkit-outer-spin-button {
     .nav-wrapper {
         padding: 0 20px;
     }
-    .nav-wrapper > a[href="/"] {
+    .nav-wrapper .link1 {
         order: 2;
     }
-    .nav-wrapper > a[href="/shop"] {
+    .nav-wrapper .link2 {
         order: 1;
     }
-    .nav-wrapper > button {
+    .nav-wrapper .bag-btn {
         order: 3;
     }
     .container {
@@ -757,7 +776,7 @@ input[type=number]::-webkit-outer-spin-button {
         align-items: inherit;
     }
     .container .home-container .home-content {
-        margin-top: 15vh;
+        margin-top: 12vh;
         transform: translateX(0%);
         padding: 0 20px;
     }

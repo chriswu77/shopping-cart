@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import uniqid from 'uniqid';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
@@ -73,12 +73,12 @@ const App = () => {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <Router basename="/">
         <NavBar toggleCart={toggleCart} totalCount={totalCount} />
         <Switch>
-          <Route exact path="/shopping-cart" component={Home} />
-          <Route exact path="/shopping-cart/shop" component={Shop} />
-          <Route path="/shopping-cart/shop/:id">
+          <Route exact path="/" component={Home} />
+          <Route exact path="/shop" component={Shop} />
+          <Route exact path="/shop/:id">
             <Item addToCart={addToCart} />
           </Route>
         </Switch>
@@ -90,7 +90,7 @@ const App = () => {
           removeFromCart={removeFromCart}
           totalCount={totalCount}
         />
-      </BrowserRouter>
+      </Router>
     </div>
   );
 };

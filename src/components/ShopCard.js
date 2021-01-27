@@ -32,7 +32,7 @@ const ShopCard = ({ pic, hover, name, id, price }) => {
 
   return (
     <div className="shop-card">
-      <Link to={`/shopping-cart/shop/${id}`}>
+      <Link to={`/shop/${id}`}>
         <div className="shop-card-click">
           <div className="img-container">
             <img
