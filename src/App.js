@@ -78,9 +78,13 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/shop" component={Shop} />
-          <Route exact path="/shop/:id">
-            <Item addToCart={addToCart} />
-          </Route>
+          <Route
+            exact
+            path="/shop/:id"
+            render={({ match }) => (
+              <Item addToCart={addToCart} key={match.params.id} />
+            )}
+          />
         </Switch>
         <Cart
           cart={cart}

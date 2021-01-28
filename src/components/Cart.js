@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import xv2 from '../imgs/xv2.svg';
 import CartQuantity from './CartQuantity';
 
@@ -11,12 +11,6 @@ const Cart = ({
   removeFromCart,
   totalCount,
 }) => {
-  const history = useHistory();
-  const handleLinkClick = (id) => {
-    history.push(`/shop/${id}`);
-    history.go(0);
-  };
-
   let modal = useRef(null);
   let backdrop = useRef(null);
   let cartModal = useRef(null);
@@ -98,14 +92,12 @@ const Cart = ({
                     src={item.pic}
                     alt={item.name}
                   />
-                  <Link to={`/shop/${item.nameId}`}>
-                    <button
-                      type="button"
-                      className="cart-item-name"
-                      onClick={() => handleLinkClick(item.nameId)}
-                    >
-                      {item.name}
-                    </button>
+                  <Link
+                    to={`/shop/${item.nameId}`}
+                    className="cart-item-name"
+                    onClick={toggleCart}
+                  >
+                    {item.name}
                   </Link>
                 </div>
                 <div className="cart-item-part">
